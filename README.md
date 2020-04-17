@@ -112,6 +112,7 @@ Set_definations() : Aktivenin ilgili componentlerini tanımlayan fonksiyon
 
 ![RESİM](/images/note-1-dark.png)
 ![RESİM](/images/note-1-light.png )
+
 ![RESİM](/images/note-2-dark.png)
 ![RESİM](/images/note-2-light.png )
 
@@ -132,8 +133,8 @@ Set_definations() : Aktivenin ilgili componentlerini tanımlayan fonksiyon
 
 2.7- Sensor
 
-![RESİM](/images/)
-![RESİM](/images/ )
+![RESİM](/images/sensor1.png)
+![RESİM](/images/sensor2.png )
   
   
 •	Cihazda mevcut sensorler yazdırılmıştır.
