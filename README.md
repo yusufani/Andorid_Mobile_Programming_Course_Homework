@@ -69,6 +69,7 @@ Set_definations() : Aktivenin ilgili componentlerini tanımlayan fonksiyon
 
 
 2.3-  Mail
+
 ![RESİM](/images/mail-dark.png)
 ![RESİM](/images/mail-light.png)
 
@@ -83,6 +84,7 @@ Set_definations() : Aktivenin ilgili componentlerini tanımlayan fonksiyon
 
 
 2.4-  People
+
 ![RESİM](/images/people-dark.png)
 ![RESİM](/images/people-lightpng.png )
 
@@ -96,6 +98,7 @@ Set_definations() : Aktivenin ilgili componentlerini tanımlayan fonksiyon
 
 
 2.5- Settings
+
  ![RESİM](/images/settings-dark.png)
 ![RESİM](/images/settings-light.png )
 
@@ -106,6 +109,7 @@ Set_definations() : Aktivenin ilgili componentlerini tanımlayan fonksiyon
 
 
 2.6- Note_Manager
+
 ![RESİM](/images/note-1-dark.png)
 ![RESİM](/images/note-1-light.png )
 ![RESİM](/images/note-2-dark.png)
@@ -127,6 +131,7 @@ Set_definations() : Aktivenin ilgili componentlerini tanımlayan fonksiyon
 
 
 2.7- Sensor
+
 ![RESİM](/images/)
 ![RESİM](/images/ )
   
