@@ -170,7 +170,7 @@ public class SensorActivity extends Activity implements SensorEventListener {
         }
         if (event.sensor.getType() == Sensor.TYPE_ACCELEROMETER){
             int new_x = (int)(event.values[0]*(100.0)) , new_y =(int)(event.values[1]*(100.0) ), new_z = (int)(event.values[2]*(100.0)) ;
-            textAcc.setText("X: "+ String.valueOf(new_x) + "  Y: " + String.valueOf(new_y) + "Z: "+String.valueOf(new_z));
+            textAcc.setText("X: "+ String.valueOf(new_x) + "  Y: " + String.valueOf(new_y) + " Z: "+String.valueOf(new_z));
             if (is_in_range(new_x,new_y,new_z)){
                 //Toast.makeText(getApplicationContext(),"Range içinde",Toast.LENGTH_SHORT).show();
                 if(! is_active) {
