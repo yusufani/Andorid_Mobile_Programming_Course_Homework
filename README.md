@@ -1,4 +1,4 @@
-1-) Genel Bilgiler
+Genel Bilgiler
 1.1-) Ödev Metni
 İçerik :
 1. Kullanıcı Giriş Ekranı
@@ -33,32 +33,47 @@ uygulama mesaj verip kendini kapatmalı
 Set_theme (): Aktivetenin rengini kullanıcının sharedPrefencesinden çekip ayarlayan fonksiyon
 Set_definations() : Aktivenin ilgili componentlerini tanımlayan fonksiyon
 2-) Activityler
+
+
 2.1- Login
+
+
+![RESİM](/images/Login.png)
 
   
 (ANA EKRANIN AÇIK MODUNU YAPMADIM GIF ILE RENKLER BIR TÜRLÜ UYMADI :D ) 
+
 •	İlk girişte kayıtlı kullanıcı bulunmadığı için kayıt olmak gerekiyor.
+
 •	Kullanıcılar username ve şifreyi girdikten sonra giriş yapabilir veya kayıt olabilirler. 
+
 •	Kullanıcı bilgileri User Sınıfı olarak Private modda dosyaya yazılmaktadır.
+
 •	Usernamede “\n” geçerse onu “ “ ile değiştirmektedir.
+
 •	3 kere hatalı giriş sonrası Toast mesajı verip uygulama kapanmaktadır.
+
 •	Username Unique olmalıdır. ( isExists Fonksiyonu )
+
 •	Username boşluk içeremez. 
+
+
 •	Checklogin fonksiyonu giriş bilgilerini control eder .
 
 2.2- Menu
+
+![RESİM](/images/Menu-dark.png)
+![RESİM](/images/Menu-light.png)
   
 •	İlgili aktivelere yönlendiren menu sistemi
 
 
-
-
-
-
-
 2.3-  Mail
-  
+![RESİM](/images/mail-dark.png)
+![RESİM](/images/mail-light.png)
+
 •	Ekle butonu ile ek eklenebilir. Bunun için Intent.ACTION_GET_CONTENT kullanılır.
+
 •	Gönder butonu ile mail uygulaması seçilip mail ekranına yönlendirilebilir.
 
 
@@ -68,39 +83,42 @@ Set_definations() : Aktivenin ilgili componentlerini tanımlayan fonksiyon
 
 
 2.4-  People
-  
+![RESİM](/images/people-dark.png)
+![RESİM](/images/people-lightpng.png )
+
 •	Kayıtlı kullanıcılar listelenir.
+
 •	Şifre alanına dokununca şifre görünür hale gelir.
+
 •	Adapter_People sınıfı kullanıcıları RecyclerViewe bağlar.
 
 
 
 
-
-
-
-
-
-
-
-
 2.5- Settings
-  
+ ![RESİM](/images/settings-dark.png)
+![RESİM](/images/settings-light.png )
+
 •	Boş bırakılan değerler 0 olarak alınır.
+
 •	Tüm bilgiler kullanıcıya özel olarak sharedPrefenceste saklanır .
 
 
 
-
-
-
 2.6- Note_Manager
-  
-    
+![RESİM](/images/note-1-dark.png)
+![RESİM](/images/note-1-light.png )
+![RESİM](/images/note-2-dark.png)
+![RESİM](/images/note-2-light.png )
+
 •	Notlar gösterilebilir ve silinebilir.
+
 •	Kayıt başlığı girilerek yeni kayıt oluşturulabilir.
+
 •	Kayıtlara otomatik olarak tarih eklenir.
+
 •	Adapter_Note sınıfı notları RecyclerView’a bağlar.
+
 •	Kayıt başlığı unique olmalıdır.
 
 
@@ -109,9 +127,14 @@ Set_definations() : Aktivenin ilgili componentlerini tanımlayan fonksiyon
 
 
 2.7- Sensor
-
+![RESİM](/images/)
+![RESİM](/images/ )
+  
   
 •	Cihazda mevcut sensorler yazdırılmıştır.
+
 •	Işık için eşik değeri bar sayesinde dinamil olarak ayarlanabilir.
+
 •	İvmeölçerden gelen değerler 100 ile çarpılıp integer olarak kaydedilmiştir. Ayrıca yatay konumda iken 50 birimlik epsilon değeri belirlendi.
+
 •	Eğer değerler 0,0,9.81 değerlerine +/- epsilon değeri kadar yakınsa timer başlatılır  . 5 sn sonra uygulama kapanır.
