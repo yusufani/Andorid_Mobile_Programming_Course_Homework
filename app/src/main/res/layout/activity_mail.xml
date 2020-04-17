@@ -30,6 +30,7 @@
                 android:textSize="20dp"></TextView>
 
             <EditText
+                android:textCursorDrawable="@null"
                 android:layout_marginStart="20dp"
                 android:hint="Lütfen Mail Adresi Giriniz.."
                 android:textColorHint="#F57C00"
@@ -57,6 +58,7 @@
                 android:textSize="20dp"></TextView>
 
             <EditText
+                android:textCursorDrawable="@null"
                 android:id="@+id/title"
                 android:textColorHint="#F57C00"
                 android:layout_width="match_parent"
@@ -86,6 +88,7 @@
                 android:textSize="20dp"></TextView>
 
             <EditText
+                android:textCursorDrawable="@null"
                 android:id="@+id/context"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

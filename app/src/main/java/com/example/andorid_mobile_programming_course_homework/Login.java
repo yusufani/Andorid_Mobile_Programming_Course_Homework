@@ -83,14 +83,14 @@ public class Login extends Activity {
                         fail_login_warning.setText("Hatali giriş sayısı " + number_of_wrong_login + "/3");
 
                         if (number_of_wrong_login == 3 ){
-                            Toast.makeText(getApplicationContext(),"3 Kere yanlış giriş yapıldığı için uygulama 10 saniye içinde  kapatılıyor!!!",Toast.LENGTH_LONG).show();
+                            Toast.makeText(getApplicationContext(),"3 Kere yanlış giriş yapıldığı için uygulama 5 saniye içinde  kapatılıyor!!!",Toast.LENGTH_LONG).show();
                             Handler h =new Handler() ;
                             h.postDelayed(new Runnable() {
                                 public void run() {
                                    finish();
                                 }
 
-                            }, 10000);
+                            }, 5000);
                         }
                         }
                 }
@@ -108,20 +108,20 @@ public class Login extends Activity {
                     Log.i("selamlar" , "selam");
                     String user_n = String.valueOf(username.getText());
                     if(!user_n.contains(" ") && !is_Exist(user_n)){
-                    user_n.replace("\n","");
-                    String pass = String.valueOf(password.getText());
-                    User user = new User(user_n,pass,R.drawable.user);
-                    FileOutputStream fos = getApplicationContext().openFileOutput(user.username+".user", Context.MODE_PRIVATE);
-                    ObjectOutputStream os = new ObjectOutputStream(fos);
-                    os.writeObject(user);
-                    os.close();
-                    fos.close();
-                    Toast.makeText(getApplicationContext(),"Başarıyla kullanıcı oluşturuldu.",Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(getApplicationContext(),Menu.class);
-                    intent.putExtra("USERNAME",user.username);
-                    startActivity(intent);
+                        user_n.replace("\n","");
+                        String pass = String.valueOf(password.getText());
+                        User user = new User(user_n,pass,R.drawable.user);
+                        FileOutputStream fos = getApplicationContext().openFileOutput(user.username+".user", Context.MODE_PRIVATE);
+                        ObjectOutputStream os = new ObjectOutputStream(fos);
+                        os.writeObject(user);
+                        os.close();
+                        fos.close();
+                        Toast.makeText(getApplicationContext(),"Başarıyla kullanıcı oluşturuldu.",Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(getApplicationContext(),Menu.class);
+                        intent.putExtra("USERNAME",user.username);
+                        startActivity(intent);
                     }
-                    else if(!user_n.contains(" ")){
+                    else if(user_n.contains(" ")){
                         Toast.makeText(getApplicationContext(),"Username boşluk içeremez",Toast.LENGTH_SHORT).show();
                     }
                     else{
