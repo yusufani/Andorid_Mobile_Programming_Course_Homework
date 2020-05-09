@@ -1,7 +1,6 @@
 package com.example.andorid_mobile_programming_course_homework;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
@@ -14,7 +13,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
-import java.util.Calendar;
 
 
 public class Menu extends AppCompatActivity {
@@ -23,7 +21,9 @@ public class Menu extends AppCompatActivity {
     ImageView settings ;
     ImageView sensor ;
     ImageView notes ;
-    IncomingSms incomingSms = new IncomingSms();
+    ImageView download ;
+    ImageView send_location;
+    ImageView alarm_manager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -67,7 +67,9 @@ public class Menu extends AppCompatActivity {
         settings = findViewById(R.id.image_settings);
         sensor = findViewById(R.id.image_sensor);
         notes = findViewById(R.id.image_notes);
-
+        download = findViewById(R.id.menu_download);
+        send_location = findViewById(R.id.image_send_loc);
+        alarm_manager = findViewById(R.id.image_alarm);
         mail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -114,6 +116,36 @@ public class Menu extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), Note_Manager.class);
+                Intent oldintent = getIntent();
+                String username  = oldintent.getStringExtra("USERNAME");
+                intent .putExtra("USERNAME",username);
+                startActivity(intent);
+            }
+        });
+        download.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), Download.class);
+                Intent oldintent = getIntent();
+                String username  = oldintent.getStringExtra("USERNAME");
+                intent .putExtra("USERNAME",username);
+                startActivity(intent);
+            }
+        });
+        send_location.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), Send_Location.class);
+                Intent oldintent = getIntent();
+                String username  = oldintent.getStringExtra("USERNAME");
+                intent .putExtra("USERNAME",username);
+                startActivity(intent);
+            }
+        });
+        alarm_manager.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), Alarm_System.class);
                 Intent oldintent = getIntent();
                 String username  = oldintent.getStringExtra("USERNAME");
                 intent .putExtra("USERNAME",username);

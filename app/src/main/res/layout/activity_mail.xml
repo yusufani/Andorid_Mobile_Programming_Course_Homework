@@ -120,7 +120,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="EKLE"
-
+                android:background="@drawable/button_background"
                 >
 
             </Button>
@@ -133,10 +133,12 @@
             android:layout_height="wrap_content"
             >
             <Button
+                android:layout_marginBottom="10dp"
                 android:id="@+id/send_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/send"
+                android:background="@drawable/button_background"
                 >
             </Button>
 

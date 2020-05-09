@@ -36,11 +36,14 @@
 
         </EditText>
     </LinearLayout>
-    <Button
-        android:text="save"
-        android:id="@+id/note_edit_save"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"></Button>
+
+        <Button
+            android:id="@+id/note_edit_save"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_background"
+            android:layout_marginBottom="20dp"
+            android:text="save"></Button>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

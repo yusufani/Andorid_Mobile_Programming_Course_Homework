@@ -36,7 +36,6 @@
                         android:id="@+id/image_mail"
                         android:layout_width="256px"
                         android:layout_height="256px"
-                        android:background="@drawable/menu_icon"
                         android:src="@drawable/mail">
 
                     </ImageView>
@@ -65,7 +64,7 @@
                         android:layout_width="256px"
                         android:layout_height="256px"
                         android:src="@drawable/people"
-                        android:background="@drawable/menu_icon"
+
                         >
 
                     </ImageView>
@@ -163,7 +162,6 @@
                         android:layout_width="256px"
                         android:layout_height="256px"
                         android:src="@drawable/sensor"
-                        android:background="@drawable/menu_icon"
                         >
 
                     </ImageView>
@@ -181,11 +179,110 @@
                 </LinearLayout>
 
 
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_gravity="right"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+
+                    android:gravity="right"
+                    >
+                    <ImageView
+                        android:layout_gravity="center"
+                        android:id="@+id/menu_download"
+                        android:layout_width="256px"
+                        android:layout_height="256px"
+                        android:src="@drawable/multimedia"
+                        android:background="@drawable/menu_icon"
+                        >
+
+                    </ImageView>
+                    <TextView
+                        android:gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:text="İndirme İşlemi"
+                        android:textSize="25dp"
+                        android:layout_marginTop="1dp"
+
+
+                        ></TextView>
+
+                </LinearLayout>
+
 
 
             </LinearLayout>
 
+            <LinearLayout
+                android:layout_marginTop="50dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="match_parent">
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_gravity="left"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="left"
+                    >
 
+                    <ImageView
+                        android:layout_gravity="center"
+                        android:id="@+id/image_send_loc"
+                        android:layout_width="256px"
+                        android:layout_height="256px"
+
+                        android:src="@drawable/location_map">
+
+                    </ImageView>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="61dp"
+                        android:layout_marginTop="1dp"
+                        android:gravity="center"
+                        android:text="Lokasyon Gönder"
+                        android:textSize="25dp"></TextView>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    >
+                    <ImageView
+                        android:layout_gravity="center"
+                        android:id="@+id/image_alarm"
+                        android:layout_width="256px"
+                        android:layout_height="256px"
+                        android:src="@drawable/alarm"
+                        >
+
+                    </ImageView>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:layout_marginTop="1dp"
+                        android:gravity="center"
+                        android:text="Alarm Yöneticisi"
+                        android:textSize="25dp"
+
+                        ></TextView>
+
+                </LinearLayout>
+
+
+
+            </LinearLayout>
         </LinearLayout>
 
     </androidx.core.widget.NestedScrollView>

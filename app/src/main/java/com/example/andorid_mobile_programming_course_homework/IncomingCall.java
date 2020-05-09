@@ -7,10 +7,14 @@ import android.view.Gravity;
 import android.widget.Toast;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.PrintStream;
+import java.util.Date;
 
 public class IncomingCall extends BroadcastReceiver {
+    private final String FILE_NAME="CALL_logs.txt";
     @Override
     public void onReceive(Context context, Intent intent) {
         if(intent.getStringExtra(TelephonyManager.EXTRA_STATE).equals(TelephonyManager.EXTRA_STATE_OFFHOOK)){
@@ -21,16 +25,26 @@ public class IncomingCall extends BroadcastReceiver {
         }
         else if(intent.getStringExtra(TelephonyManager.EXTRA_STATE).equals(TelephonyManager.EXTRA_STATE_RINGING)){
             String Number  = intent.getStringExtra(TelephonyManager.EXTRA_INCOMING_NUMBER);
+            String log = "Incoming call from "+Number + " Date:" + new Date(System.currentTimeMillis()).toString()+"\n";
+            showToast(context,log+context.getFilesDir() + "/" + FILE_NAME);
 
-            showToast(context,"Incoming call from "+Number);
-            File file = new File("/sdcard/demo/infos.txt");
-            try {
-                FileOutputStream fileinput = new FileOutputStream(file);
-                PrintStream printstream = new PrintStream(fileinput);
-                printstream.print(Number+"\n");
-                fileinput.close();
-            } catch (Exception e) {
-                Toast.makeText(context,e.getMessage(),Toast.LENGTH_SHORT).show();
+            FileOutputStream fos = null;
+            try{
+                fos = context.openFileOutput(FILE_NAME, Context.MODE_APPEND);
+                fos.write(log.getBytes());
+            }
+            catch (FileNotFoundException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            } finally {
+                if (fos != null) {
+                    try {
+                        fos.close();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
             }
         }
     }

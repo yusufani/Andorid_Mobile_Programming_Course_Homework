@@ -9,10 +9,14 @@ import android.telephony.SmsMessage;
 import android.util.Log;
 import android.widget.Toast;
 
-public class IncomingSms extends BroadcastReceiver {
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.util.Date;
 
+public class IncomingSms extends BroadcastReceiver {
+    private final String FILE_NAME="SMS_logs.txt";
     // Get the object of SmsManager
-    final SmsManager sms = SmsManager.getDefault();
     @Override
     public void onReceive(Context context, Intent intent) {
 
@@ -32,15 +36,34 @@ public class IncomingSms extends BroadcastReceiver {
 
                     String senderNum = phoneNumber;
                     String message = currentMessage.getDisplayMessageBody();
-
-                    Log.i("SmsReceiver", "senderNum: "+ senderNum + "; message: " + message);
+                    String log = "Message Sender Number : "+ senderNum + ", Message: " + message +" Date:" + new Date(System.currentTimeMillis()).toString()+"\n";
+                    Log.i("SmsReceiver", log);
 
 
                     // Show Alert
                     int duration = Toast.LENGTH_LONG;
                     Toast toast = Toast.makeText(context,
-                            "Message Sender Number : "+ senderNum + ", Message: " + message, duration);
+                            log + " Saved to " + context.getFilesDir() + "/" + FILE_NAME, duration );
                     toast.show();
+
+                    FileOutputStream fos = null;
+                    try{
+                        fos = context.openFileOutput(FILE_NAME, Context.MODE_APPEND);
+                        fos.write(log.getBytes());
+                    }
+                     catch (FileNotFoundException e) {
+                        e.printStackTrace();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    } finally {
+                        if (fos != null) {
+                            try {
+                                fos.close();
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                    }
 
                 } // end for loop
             } // bundle is null

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Send_Location">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_weight="3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_gravity="center|center_horizontal|center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_gravity="center"
+                    android:src="@drawable/location_map"
+                    android:layout_width="250px"
+                    android:layout_height="250px">
+
+                </ImageView>
+
+                <Button
+                    android:layout_gravity="center"
+                    android:id="@+id/SEND_LOC_get_loc"
+                    android:layout_width="133dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/button_background"
+                    android:gravity="center"
+                    android:text="Lokasyonu al">
+
+                </Button>
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_weight="1"
+                android:layout_gravity="center|center_horizontal|center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_gravity="center"
+                    android:layout_width="250px"
+                    android:layout_height="250px"
+                    android:src="@drawable/share_location">
+
+                </ImageView>
+
+                <Button
+                    android:id="@+id/SEND_LOC_share_loc"
+                    android:layout_width="156dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/button_background"
+                    android:text="Lokasyonu gönder">
+
+                </Button>
+            </LinearLayout>
+
+        </LinearLayout>
+        <TextView
+            android:layout_weight="2"
+            android:layout_marginTop="10dp"
+            android:text=""
+            android:gravity="center"
+            android:id="@+id/SEND_LOC_loc_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </TextView>
+
+    </LinearLayout>
+</LinearLayout>

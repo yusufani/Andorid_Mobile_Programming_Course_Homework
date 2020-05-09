@@ -205,9 +205,12 @@
         <Button
             android:theme="@style/Widget.AppCompat.Button.Colored"
             android:id="@+id/settings_save"
+            android:layout_marginBottom="20dp"
             android:text="Kaydet"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_background"
+            >
 
 
         </Button>
