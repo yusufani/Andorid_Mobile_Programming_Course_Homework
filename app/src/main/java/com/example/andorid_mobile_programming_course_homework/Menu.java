@@ -5,6 +5,7 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import android.Manifest;
+import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -13,6 +14,18 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.Toast;
+
+import com.google.android.gms.location.ActivityRecognition;
+import com.google.android.gms.location.ActivityTransition;
+import com.google.android.gms.location.ActivityTransitionRequest;
+import com.google.android.gms.location.DetectedActivity;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class Menu extends AppCompatActivity {
@@ -24,6 +37,7 @@ public class Menu extends AppCompatActivity {
     ImageView download ;
     ImageView send_location;
     ImageView alarm_manager;
+    ImageView sit_counter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -70,6 +84,7 @@ public class Menu extends AppCompatActivity {
         download = findViewById(R.id.menu_download);
         send_location = findViewById(R.id.image_send_loc);
         alarm_manager = findViewById(R.id.image_alarm);
+        sit_counter = findViewById(R.id.menu_sit_counter);
         mail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -152,5 +167,17 @@ public class Menu extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        sit_counter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), Sit_Counter.class);
+                Intent oldintent = getIntent();
+                String username  = oldintent.getStringExtra("USERNAME");
+                intent .putExtra("USERNAME",username);
+                startActivity(intent);
+            }
+        });
+
+
     }
 }

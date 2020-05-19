@@ -16,6 +16,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -24,6 +25,8 @@ import java.util.Random;
 import java.util.Random;
 
 public class Download extends AppCompatActivity {
+    ImageView imageView;
+
     ProgressBar progressBar ;
     Button button;
     int current_progress = 0 ;
@@ -38,11 +41,15 @@ public class Download extends AppCompatActivity {
     }
 
     private void set_definations() {
+        imageView = findViewById(R.id.download_image);
+        imageView.setVisibility(View.GONE);
         progressBar = findViewById(R.id.download_progress_bar);
         button = findViewById(R.id.download_download_button);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                imageView.setVisibility(View.GONE);
+
                 new BackgroundTask().execute((Void) null);
             }
         });
@@ -99,11 +106,13 @@ public class Download extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(Void result) {
+
             super.onPostExecute(result);
             Uri ringtoneUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_ALARM);
             final Ringtone ringtoneSound = RingtoneManager.getRingtone(getApplicationContext(), ringtoneUri);
 
             if (ringtoneSound != null) {
+                imageView.setVisibility(View.VISIBLE);
                 ringtoneSound.play();
 
                 Handler h =new Handler() ;
