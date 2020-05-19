@@ -144,3 +144,11 @@ Set_definations() : Aktivenin ilgili componentlerini tanımlayan fonksiyon
 •	İvmeölçerden gelen değerler 100 ile çarpılıp integer olarak kaydedilmiştir. Ayrıca yatay konumda iken 50 birimlik epsilon değeri belirlendi.
 
 •	Eğer değerler 0,0,9.81 değerlerine +/- epsilon değeri kadar yakınsa timer başlatılır  . 5 sn sonra uygulama kapanır.
+
+
+
+
+## Yeni Versiyon Alarm Manager , Location Sender , Still Counter , Download Handler
+
+Anlatım ve ekran görüntüleri : https://www.youtube.com/watch?v=4-pcKiJ1k_s
+
